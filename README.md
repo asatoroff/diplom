@@ -8,15 +8,15 @@
 [Ссылка на Дипломное задание](https://github.com/netology-code/qa-diploma).
 
 ## Тестовая документация
-1. [План тестирования](https://github.com//Documentation/Plan.md);
-1. [Отчёт по итогам тестирования](https://github.com//Documentation/отчет о проведённом тестировании.md);
-1. [Отчет по итогам автоматизации](https://github.com//Documentation/отчет о проведённой автоматизации.md)
+1. [План тестирования](https://github.com/asatoroff/diplom/blob/master/Documentation/Plan.md);
+1. [Отчёт по итогам тестирования](https://github.com/asatoroff/diplom/blob/master/Documentation/%D0%9E%D1%82%D1%87%D1%91%D1%82%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D1%91%D0%BD%D0%BD%D0%BE%D0%BC%20%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8.md);
+1. [Отчет по итогам автоматизации](https://github.com/asatoroff/diplom/blob/master/Documentation/%D0%9E%D1%82%D1%87%D1%91%D1%82%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D1%91%D0%BD%D0%BD%D0%BE%D0%B9%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8.md)
 
 ## Запуск приложения
 ### Подготовительный этап
 1. Установить и запустить IntelliJ IDEA;
 1. Установать и запустить Docker Desktop;
-1. Скопировать репозиторий с Github [по ссылке](https://github.com//Diplom.git).
+1. Скопировать репозиторий с Github [по ссылке](https://github.com/asatoroff/diplom.git).
 1. Открыть проект в IntelliJ IDEA.
 
 ### Запуск тестового приложения
