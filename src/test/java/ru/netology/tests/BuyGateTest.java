@@ -36,8 +36,8 @@ public class BuyGateTest {
 
     @Test
     void buyPositiveAllFieldValidApproved() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getApprovedCard());
         payment.waitNotificationApproved();
         assertEquals("APPROVED", SqlHelper.getPaymentStatus());
@@ -45,8 +45,8 @@ public class BuyGateTest {
 
     @Test
     void buyPositiveAllFieldValidDeclined() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getDeclinedCard());
         payment.waitNotificationFailure();
         assertEquals("DECLINED", SqlHelper.getPaymentStatus());
@@ -54,8 +54,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeAllFieldEmpty() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getEmptyCard());
         payment.waitNotificationWrongFormat4Fields();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -63,8 +63,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeNumberCard15Symbols() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getNumberCard15Symbols());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -72,8 +72,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeCardNotInDatabase() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardNotInDatabase());
         payment.waitNotificationFailure();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -81,8 +81,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeMonth1Symbol() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardMonth1Symbol());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -90,8 +90,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeMonthOver12() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardMonthOver12());
         payment.waitNotificationExpirationDateError();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -99,8 +99,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeMonth00ThisYear() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardMonth00ThisYear());
         payment.waitNotificationExpirationDateError();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -108,8 +108,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeMonth00OverThisYear() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardMonth00OverThisYear());
         payment.waitNotificationExpirationDateError();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -117,8 +117,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeYear00() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardYear00());
         payment.waitNotificationExpiredError();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -126,8 +126,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeYear1Symbol() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardYear1Symbol());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -135,8 +135,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeYearUnderThisYear() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardYearUnderThisYear());
         payment.waitNotificationExpiredError();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -144,8 +144,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeYearOverThisYearOn6() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardYearOverThisYearOn6());
         payment.waitNotificationExpirationDateError();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -153,8 +153,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeCvv1Symbol() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardCvv1Symbol());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -162,8 +162,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeCvv2Symbols() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardCvv2Symbols());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -171,8 +171,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeOwner1Word() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardHolder1Word());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -180,8 +180,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeOwnerCirillic() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardHolderCirillic());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -189,8 +189,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeOwnerNumeric() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardHolderNumeric());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
@@ -198,8 +198,8 @@ public class BuyGateTest {
 
     @Test
     void buyNegativeOwnerSpecialSymbols() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
+        var startPage = new PaymentMethod();
+        var payment = startPage.goToBuyPage();
         payment.inputData(DataHelper.getCardSpecialSymbols());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
