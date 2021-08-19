@@ -4,6 +4,8 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.Card;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -41,28 +43,28 @@ public class BuyGate {
     }
 
     public void waitNotificationApproved() {
-        approvedOperation.waitUntil(visible, 15000);
+        approvedOperation.shouldBe(visible, Duration.ofSeconds(15));
         cancelField.click();
     }
 
     public void waitNotificationFailure() {
-        failureOperation.waitUntil(visible, 15000);
+        failureOperation.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void waitNotificationWrongFormat() {
-        wrongFormatError.waitUntil(visible, 15000);
+        wrongFormatError.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void waitNotificationExpirationDateError() {
-        cardExpirationDateError.waitUntil(visible, 15000);
+        cardExpirationDateError.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void waitNotificationExpiredError() {
-        cardExpiredError.waitUntil(visible, 15000);
+        cardExpiredError.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void waitNotificationWrongFormat4Fields() {
         wrongFormat4Error.shouldHaveSize(4);
-        requiredFieldError.waitUntil(visible, 15000);
+        requiredFieldError.shouldBe(visible, Duration.ofSeconds(15));
     }
 }
